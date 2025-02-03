@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Example</title>
+</head>
+<body>
+    <h1>Cadastro do PEWS</h1>
+    <form action="cadastro_pews.php" method="post">
+        <!-- CRM field -->
+        <label for="crm">CRM DO MÉDICO:</label>
+        <input type="int" id="crm" name="crm" required>
+        <br><br>
+        
+        <!-- Nome field -->
+        <label for="nome_paciente">Nome do paciente:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br><br>
+        
+        <label for="idade">Idade do paciente:</label>
+        <input type="int" id="idade" name="idade" required>
+        <br><br>
+        
+        <!-- Especialidade field -->
+        <label for="f_cardiaca">Frquencia cardiaca:</label>
+        <input type="int" id="f_cardiaca" name="f_cardiaca" required>
+        <br><br>
+        
+        <!-- Senha field -->
+        <label for="f_respiratoria">Frequencia respiratória:</label>
+        <input type="int" id="f_respiratoria" name="f_respiratoria" required>
+        <br><br>
+
+        <label for="aval_neurologica">Avaliação Neurológica:</label>
+        <input type="text" id="aval_neurologica" name="aval_neurologica" required>
+        <br><br>
+        
+        <label for="aval_cardiovascular">Avaliação Cardiovascular:</label>
+        <input type="text" id="aval_cardiovascular" name="aval_cardiovascular" required>
+        <br><br>
+
+        <label for="aval_respiratoria">Avaliação respiratória:</label>
+        <input type="text" id="aval_respiratoria" name="aval_respiratoria" required>
+        <br><br>
+
+        <label for="pos_op">Pós Operatório:</label>
+        <select id="pos_op" name="pos_op" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="masculino">Sim</option>
+            <option value="feminino">Não</option>
+        </select>
+        <br><br>
+
+        <label for="nebulizacao_resgate">Nebulização de Resgate:</label>
+        <select id="nebulizacao_resgate" name="nebulizacao_resgate" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="masculino">Sim</option>
+            <option value="feminino">Não</option>
+        </select>
+        <br><br>
+
+        <label for="intervencao">Intervenção:</label>
+        <input type="text" id="intervencao" name="intervencao" required>
+        <br><br>
+
+        <!-- Submit button -->
+        <button type="submit">Enviar</button>
+
+  
+    </form>
+
+    <button name="VOLTAR" onclick="window.location.href='index.html'">Voltar</button>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Completo</title>
+    <link rel="stylesheet" href="cadastra_paciente.css">
+</head>
+<body>
+    <h1>Cadastro Completo</h1>
+    <form action="cadastra_paciente.php" method="post">
+
+        <label for="nome">Responsável:</label>
+        <input type="text" id="responsavel" name="responsavel" required>
+        <br><br>
+        
+        <!-- Nome field -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br><br>
+        
+        <!-- Idade field -->
+        <label for="idade">Idade:</label>
+        <input type="number" id="idade" name="idade" min="0" required>
+        <br><br>
+        
+        <!-- Telefone field -->
+        <label for="telefone">Telefone:</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX" required>
+        <br><br>
+        
+        <!-- Gênero field -->
+        <label for="genero">Gênero:</label>
+        <select id="genero" name="genero" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="masculino">Masculino</option>
+            <option value="feminino">Feminino</option>
+            <option value="outro">Outro</option>
+        </select>
+        <br><br>
+        
+        <!-- Data de Nascimento field -->
+        <label for="data_nascimento">Data de Nascimento:</label>
+        <input type="date" id="data_nascimento" name="data_nascimento" required>
+        <br><br>
+        
+        <!-- Data de Admissão field -->
+        <label for="data_admissao">Data de Admissão:</label>
+        <input type="date" id="data_admissao" name="data_admissao" required>
+        <br><br>
+        
+        <!-- Alergias field -->
+        <label for="alergias">Alergias:</label>
+        <textarea id="alergias" name="alergias" rows="3" placeholder="Descreva aqui (se houver)..."></textarea>
+        <br><br>
+        
+        <!-- Remédios field -->
+        <label for="remedios">Remédios:</label>
+        <textarea id="remedios" name="remedios" rows="3" placeholder="Descreva aqui (se houver)..."></textarea>
+        <br><br>
+        
+        <!-- Tipo Sanguíneo field -->
+        <label for="tipo_sanguineo">Tipo Sanguíneo:</label>
+        <select id="tipo_sanguineo" name="tipo_sanguineo" required>
+            <option value="" disabled selected>Selecione</option>
+            <option value="a+">A+</option>
+            <option value="a-">A-</option>
+            <option value="b+">B+</option>
+            <option value="b-">B-</option>
+            <option value="ab+">AB+</option>
+            <option value="ab-">AB-</option>
+            <option value="o+">O+</option>
+            <option value="o-">O-</option>
+        </select>
+        <br><br>
+        
+        <!-- Submit button -->
+        <button type="submit">Enviar</button>
+</form>
+
+    <button name="VOLTAR" onclick="window.location.href='index.html'">Voltar</button>
+</body>
+</html>

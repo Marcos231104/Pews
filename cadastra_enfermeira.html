@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <h1>Cadastro</h1>
+    <form action="cadastra_enfermeira.php" method="post">
+        <!-- CIP field -->
+        <label for="cip">CIP:</label>
+        <input type="text" id="cip" name="cip" required>
+        <br><br>
+        
+        <!-- Nome field -->
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <br><br>
+        
+        <!-- Função field -->
+        <label for="funcao">Função:</label>
+        <input type="text" id="funcao" name="funcao" required>
+        <br><br>
+        
+        <!-- Senha field -->
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" required>
+        <br><br>
+        
+        <!-- Submit button -->
+        <button type="submit">Enviar</button>
+        
+
+    </form>
+
+    <button onclick="window.location.href='index.html'">Voltar</button>
+</body>
+</html>
