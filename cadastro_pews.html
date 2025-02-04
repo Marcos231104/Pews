@@ -8,58 +8,67 @@
 <body>
     <h1>Cadastro do PEWS</h1>
     <form action="cadastro_pews.php" method="post">
+        <br><br>
+
         <!-- CRM field -->
-        <label for="crm">CRM DO MÉDICO:</label>
+        <label for="crm">CRM:</label>
         <input type="int" id="crm" name="crm" required>
         <br><br>
-        
+
         <!-- Nome field -->
         <label for="nome_paciente">Nome do paciente:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome_paciente" name="nome_paciente" required>
         <br><br>
-        
+
+        <!-- Idade field -->
         <label for="idade">Idade do paciente:</label>
         <input type="int" id="idade" name="idade" required>
         <br><br>
-        
-        <!-- Especialidade field -->
-        <label for="f_cardiaca">Frquencia cardiaca:</label>
+
+        <!-- Frequencia Cardiaca field -->
+        <label for="f_cardiaca">Frequência cardíaca:</label>
         <input type="int" id="f_cardiaca" name="f_cardiaca" required>
         <br><br>
-        
-        <!-- Senha field -->
-        <label for="f_respiratoria">Frequencia respiratória:</label>
+
+        <!-- Frequencia Respiratoria field -->
+        <label for="f_respiratoria">Frequência respiratória:</label>
         <input type="int" id="f_respiratoria" name="f_respiratoria" required>
         <br><br>
 
+        <!-- Avaliação Neurológica field -->
         <label for="aval_neurologica">Avaliação Neurológica:</label>
         <input type="text" id="aval_neurologica" name="aval_neurologica" required>
         <br><br>
-        
+
+        <!-- Avaliação Cardiovascular field -->
         <label for="aval_cardiovascular">Avaliação Cardiovascular:</label>
         <input type="text" id="aval_cardiovascular" name="aval_cardiovascular" required>
         <br><br>
 
-        <label for="aval_respiratoria">Avaliação respiratória:</label>
+        <!-- Avaliação Respiratória field -->
+        <label for="aval_respiratoria">Avaliação Respiratória:</label>
         <input type="text" id="aval_respiratoria" name="aval_respiratoria" required>
         <br><br>
 
+        <!-- Pós Operatório field -->
         <label for="pos_op">Pós Operatório:</label>
         <select id="pos_op" name="pos_op" required>
             <option value="" disabled selected>Selecione</option>
-            <option value="masculino">Sim</option>
-            <option value="feminino">Não</option>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
         </select>
         <br><br>
 
+        <!-- Nebulização de Resgate field -->
         <label for="nebulizacao_resgate">Nebulização de Resgate:</label>
         <select id="nebulizacao_resgate" name="nebulizacao_resgate" required>
             <option value="" disabled selected>Selecione</option>
-            <option value="masculino">Sim</option>
-            <option value="feminino">Não</option>
+            <option value="Sim">Sim</option>
+            <option value="Não">Não</option>
         </select>
         <br><br>
 
+        <!-- Intervenção field -->
         <label for="intervencao">Intervenção:</label>
         <input type="text" id="intervencao" name="intervencao" required>
         <br><br>
