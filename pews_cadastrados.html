@@ -13,10 +13,16 @@
 
     <script>
         function fetchPews() {
-            fetch('pews_cadastrados.php')
-                .then(response => response.text())
-                .then(data => document.getElementById('pews').innerHTML = data)
-                .catch(error => console.error('Erro ao carregar pews:', error));
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
+            if (id) {
+                fetch(`pews_cadastrados.php?id=${id}`)
+                    .then(response => response.text())
+                    .then(data => document.getElementById('pews').innerHTML = data)
+                    .catch(error => console.error('Erro ao carregar pews:', error));
+            } else {
+                document.getElementById('pews').innerHTML = '<p>ID inválido.</p>';
+            }
         }
 
         fetchPews(); // Load on page load
