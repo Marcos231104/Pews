@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastra_medico.css">
     <title>Form Example</title>
 </head>
 <body>
     <h1>Cadastro</h1>
-    <form action="cadastra_medico.php" method="post">
+    <form id="cadastroForm" action="cadastra_medico.php" method="post" onsubmit="return showSuccessMessage()">
         <!-- CRM field -->
         <label for="crm">CRM:</label>
-        <input type="int" id="crm" name="crm" required>
+        <input type="number" id="crm" name="crm" required>
         <br><br>
         
         <!-- Nome field -->
@@ -30,11 +31,15 @@
         
         <!-- Submit button -->
         <button type="submit">Enviar</button>
-
-  
     </form>
 
     <button name="VOLTAR" onclick="window.location.href='index.html'">Voltar</button>
 
+    <script>
+        function showSuccessMessage() {
+            alert("O cadastro foi completado");
+            return true; // Allow the form to submit
+        }
+    </script>
 </body>
 </html>

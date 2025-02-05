@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Cadastro Completo</h1>
-    <form action="cadastra_paciente.php" method="post">
+    <form id="myForm" action="cadastra_paciente.php" method="post">
 
         <label for="nome">Responsável:</label>
         <input type="text" id="responsavel" name="responsavel" required>
@@ -75,8 +75,8 @@
         <br><br>
         
         <!-- Submit button -->
-        <button type="submit">Enviar</button>
-</form>
+        <button type="submit" id="submitButton">Submit</button>
+    </form>
 
     <button name="VOLTAR" onclick="window.location.href='index.html'">Voltar</button>
 </body>
