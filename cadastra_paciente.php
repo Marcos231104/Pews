@@ -9,15 +9,15 @@ $idade = $_POST['idade'];
 $telefone = $_POST['telefone'];
 $genero = $_POST['genero'];
 $data_nascimento = $_POST['data_nascimento'];
-$data_admissao = $_POST['data_admissao'];
+$data_admissao = $_POST['data_entrada'];
 $alergias = $_POST['alergias'];
 $remedios = $_POST['remedios'];
 $tipo_sanguineo = $_POST['tipo_sanguineo'];
 
 // Prepare and bind the SQL statement
-$stmt = $conn->prepare("INSERT INTO paciente (responsavel, nome, idade, telefone, genero, data_nascimento, data_admissao, alergias, remedios, tipo_sanguineo) 
+$stmt = $conn->prepare("INSERT INTO paciente (responsavel, nome, idade, telefone, genero, data_nascimento, data_entrada, alergias, remedios, tipo_sanguineo) 
                         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
-$stmt->bind_param("ssisssssss", $responsavel, $nome, $idade, $telefone, $genero, $data_nascimento, $data_admissao, $alergias, $remedios, $tipo_sanguineo);
+$stmt->bind_param("ssisssssss", $responsavel, $nome, $idade, $telefone, $genero, $data_nascimento, $data_entrada, $alergias, $remedios, $tipo_sanguineo);
 
 // Execute the query
 if ($stmt->execute()) {
