@@ -15,7 +15,7 @@ $coren = $_POST['coren'];
 $senha = $_POST['senha'];
 
 // Prepare the SQL query to check credentials
-$sql = "SELECT * FROM medico WHERE coren = ? AND senha = ?";
+$sql = "SELECT * FROM enfermeira WHERE coren = ? AND senha = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
@@ -32,7 +32,7 @@ if ($result->num_rows > 0) {
     echo "<script>alert('Login realizado com sucesso!'); window.location.href='index.html';</script>";
 } else {
     // Credentials are incorrect
-    echo "<script>alert('Erro: COREN ou senha incorretos!'); window.location.href='login_medico.html';</script>";
+    echo "<script>alert('Erro: COREN ou senha incorretos!'); window.location.href='login_enfermeiro.html';</script>";
 }
 
 // Close connections
