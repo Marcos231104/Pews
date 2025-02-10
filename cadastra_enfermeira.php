@@ -3,25 +3,20 @@
 include 'db.php';
 
 // Capture form data
-$cip = $_POST['coren'];  // Make sure this is an integer
+$coren = $_POST['coren']; // Change $cip to $coren
 $nome = $_POST['nome'];
-$funcao = $_POST['funcao'];
+$especialidade = $_POST['funcao']; // Change $funcao to $especialidade
 $senha = $_POST['senha'];
 
 // Prepare and bind the SQL statement
-$stmt = $conn->prepare("INSERT INTO enfermeira (coren, nome, funcao, senha) VALUES (?, ?, ?, ?)");
-
-if ($stmt === false) {
-    // If prepare() fails, output the error
-    die('MySQL prepare error: ' . $conn->error);
-}
-
-// Bind the parameters. 'i' stands for integer, 's' stands for string.
-$stmt->bind_param("isss", $coren, $nome, $funcao, $senha);
+$stmt = $conn->prepare("INSERT INTO medico (crm, nome, funcao, senha) 
+                        VALUES (?, ?, ?, ?)");
+$stmt->bind_param("isss", $crm, $nome, $especialidade, $senha);
 
 // Execute the query
 if ($stmt->execute()) {
     echo "Record successfully inserted!";
+    header("Location: home.html");
 } else {
     echo "Error: " . $stmt->error;
 }

@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Enfermeira</title>
-    <link rel="stylesheet" href="cadastra_enfermeira.css">
+    <title>Cadastro de Médico</title>
+    <link rel="stylesheet" href="cadastrar_medico.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="form-container">
         <div class="header">
-            <i class="fa-solid fa-user-nurse"></i>
-            <h1>Cadastro de Enfermeira</h1>
-            <p>Preencha os dados da enfermeira</p>
+            <i class="fa-solid fa-user-doctor"></i>
+            <h1>Cadastro de Enfermeiro</h1>
+            <p>Preencha os dados do enfermeiro</p>
         </div>
 
-        <form id="cadastroForm" action="cadastra_enfermeira.php" method="post" onsubmit="return handleSubmit(event)">
+        <form id="cadastroForm" action="cadastra_medico.php" method="post" onsubmit="return handleSubmit(event)">
             <div class="form-grid">
                 <div class="form-group">
                     <label for="coren">
@@ -35,8 +35,8 @@
 
                 <div class="form-group">
                     <label for="funcao">
-                        <i class="fa-solid fa-briefcase"></i>
-                        Função
+                        <i class="fa-solid fa-stethoscope"></i>
+                        Especialidade
                     </label>
                     <input type="text" id="funcao" name="funcao" required>
                 </div>
