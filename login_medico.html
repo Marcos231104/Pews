@@ -1,36 +1,84 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login de Médico</title>
     <link rel="stylesheet" href="cadastra_medico.css">
-    <title>Form Example</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <div class="form-container">
+        <div class="header">
+            <i class="fa-solid fa-user-doctor"></i>
+            <h1>Login de Médico</h1>
+            <p>Faça login com suas credenciais</p>
+        </div>
 
-    <form id="cadastroForm" action="login_medico.php" method="post">
+        <form id="cadastroForm" action="login_medico.php" method="post" onsubmit="return handleSubmit(event)">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="crm">
+                        <i class="fa-solid fa-id-card"></i>
+                        CRM
+                    </label>
+                    <input type="number" id="crm" name="crm" required>
+                </div>
 
-        <!-- CRM field -->
-        <label for="crm">CRM:</label>
-        <input type="number" id="crm" name="crm" required>
-        <br><br>
-        
-        <!-- Senha field -->
-        <label for="senha">Senha:</label>
-        <input type="password" id="senha" name="senha" required>
-        <br><br>
-        
-        <!-- Submit button -->
-        <button type="submit">Entrar</button>
-    </form>
+                <div class="form-group">
+                    <label for="senha">
+                        <i class="fa-solid fa-lock"></i>
+                        Senha
+                    </label>
+                    <input type="password" id="senha" name="senha" required>
+                </div>
+            </div>
 
-    <button name="VOLTAR" onclick="window.location.href='home.html'">Voltar</button>
+            <div class="button-group">
+                <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Voltar
+                </button>
+                <button type="submit" class="btn-primary">
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Entrar
+                </button>
+            </div>
+        </form>
+    </div>
 
     <script>
-        function showSuccessMessage() {
-            alert("O cadastro foi completado");
-            return true; // Allow the form to submit
+        function handleSubmit(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Exibe a mensagem de sucesso
+            alert("Login realizado com sucesso!");
+
+            // Redireciona para index.html após 1 segundo (opcional)
+            setTimeout(() => {
+                window.location.href = "index.html";
+            }, 1000);
+
+            // Envia o formulário via JavaScript (opcional)
+            const form = event.target;
+            const formData = new FormData(form);
+
+            fetch(form.action, {
+                method: form.method,
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    console.log("Formulário enviado com sucesso!");
+                } else {
+                    console.error("Erro ao enviar o formulário.");
+                }
+            })
+            .catch(error => {
+                console.error("Erro:", error);
+            });
+
+            return false; // Impede o envio padrão do formulário
         }
     </script>
 </body>
