@@ -90,3 +90,7 @@ body {
     border-radius: 5px;
     font-size: 16px;
 }
+
+.btn-secondary button:hover {
+    background-color: #56705c;
+}
