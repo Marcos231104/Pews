@@ -1,53 +1,138 @@
-/* Estilo geral do corpo */
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f0f0f0; /* Cor de fundo suave */
+/* Variáveis CSS */
+:root {
+    --color-primary: #2196F3;
+    --color-primary-dark: #1976D2;
+    --color-primary-light: #64B5F6;
+    --color-white: #ffffff;
+    --color-gray: #f5f5f5;
+    --color-text: #333333;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset e estilos base */
+* {
     margin: 0;
     padding: 0;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center; /* Centraliza verticalmente */
-    height: 100vh; /* Altura total da janela */
+    box-sizing: border-box;
 }
 
-/* Estilo do contêiner do formulário */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #E3F2FD, #BBDEFB);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Container principal */
 .form-container {
-    width: 600px; /* Largura da janela */
-    padding: 30px; /* Espaçamento interno */
-    background-color: #4CAF50; /* Cor de fundo verde */
-    border-radius: 10px; /* Bordas arredondadas */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    color: white; /* Cor do texto dentro da janela */
+    width: 100%;
+    max-width: 600px;
+    background: var(--color-white);
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    padding: 40px;
 }
 
-/* Estilo do título */
-h2 {
+/* Header */
+.header {
     text-align: center;
-    color: white; /* Cor do texto do título */
-    margin-bottom: 20px; /* Espaçamento inferior */
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--color-gray);
 }
 
-/* Estilo do contêiner dos botões */
+.header i {
+    font-size: 3.5rem;
+    color: var(--color-primary);
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.header h2 {
+    color: var(--color-text);
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Container dos botões */
 .button-container {
-    display: flex;
-    justify-content: center; /* Centraliza os botões */
-    margin-bottom: 15px; /* Espaçamento inferior entre os botões */
+    margin-bottom: 20px;
 }
 
-/* Estilo do botão */
+/* Estilo dos botões */
 button {
-    padding: 12px 20px; /* Espaçamento interno */
-    background-color: #ffffff; /* Cor de fundo branca para contraste */
-    color: #4CAF50; /* Cor do texto verde */
-    border: none; /* Sem borda */
-    border-radius: 5px; /* Bordas arredondadas */
-    cursor: pointer; /* Cursor de ponteiro */
-    font-size: 16px; /* Tamanho da fonte */
-    transition: background-color 0.3s; /* Transição suave */
-    margin: 0 10px; /* Espaçamento entre os botões */
+    width: 100%;
+    padding: 16px 24px;
+    background: var(--color-white);
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Efeito hover do botão */
+button i {
+    font-size: 1.4rem;
+    min-width: 30px;
+    text-align: center;
+}
+
+button span {
+    flex-grow: 1;
+    text-align: left;
+}
+
 button:hover {
-    background-color: #e7e7e7; /* Cor de fundo ao passar o mouse */
+    background: var(--color-primary);
+    color: var(--color-white);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.2);
+}
+
+/* Botão destacado (PEWS) */
+button.highlight {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+button.highlight:hover {
+    background: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    .header h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+
+    button i {
+        font-size: 1.2rem;
+    }
 }

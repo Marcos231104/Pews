@@ -16,7 +16,7 @@ $stmt->bind_param("isss", $crm, $nome, $especialidade, $senha);
 // Execute the query
 if ($stmt->execute()) {
     echo "Record successfully inserted!";
-    header("Location: index.html");
+    header("Location: home.html");
 } else {
     echo "Error: " . $stmt->error;
 }
