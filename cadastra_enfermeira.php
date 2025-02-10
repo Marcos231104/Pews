@@ -9,9 +9,9 @@ $especialidade = $_POST['funcao']; // Change $funcao to $especialidade
 $senha = $_POST['senha'];
 
 // Prepare and bind the SQL statement
-$stmt = $conn->prepare("INSERT INTO medico (crm, nome, funcao, senha) 
+$stmt = $conn->prepare("INSERT INTO enfermeira (coren, nome, funcao, senha) 
                         VALUES (?, ?, ?, ?)");
-$stmt->bind_param("isss", $crm, $nome, $especialidade, $senha);
+$stmt->bind_param("isss", $coren, $nome, $especialidade, $senha);
 
 // Execute the query
 if ($stmt->execute()) {
