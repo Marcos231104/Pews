@@ -11,28 +11,28 @@ if ($conn->connect_error) {
 }
 
 // Get input values from form
-$crm = $_POST['crm'];
+$coren = $_POST['coren'];
 $senha = $_POST['senha'];
 
 // Prepare the SQL query to check credentials
-$sql = "SELECT * FROM medico WHERE crm = ? AND senha = ?";
+$sql = "SELECT * FROM enfermeira WHERE coren = ? AND senha = ?";
 $stmt = $conn->prepare($sql);
 
 if ($stmt === false) {
     die("Error preparing the statement: " . $conn->error);
 }
 
-$stmt->bind_param("ss", $crm, $senha);
+$stmt->bind_param("ss", $coren, $senha);
 $stmt->execute();
 $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     // Credentials are correct, login successful
-    $_SESSION['crm'] = $crm;
+    $_SESSION['coren'] = $coren;
     echo "<script>alert('Login realizado com sucesso!'); window.location.href='dashboard.php';</script>";
 } else {
     // Credentials are incorrect
-    echo "<script>alert('Erro: CRM ou senha incorretos!'); window.location.href='login_medico.html';</script>";
+    echo "<script>alert('Erro: COREN ou senha incorretos!'); window.location.href='login_medico.html';</script>";
 }
 
 // Close connections
