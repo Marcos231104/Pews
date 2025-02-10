@@ -80,12 +80,12 @@
 
     <script>
         // Set the current date to the "Data de Admissão" field
-        document.getElementById('data_admissao').value = new Date().toISOString().split('T')[0];
+        document.getElementById('data_entrada').value = new Date().toISOString().split('T')[0];
     
         // Calculate age and set it to the hidden idade field before form submission
         document.getElementById('myForm').addEventListener('submit', function(event) {
             const dataNascimento = new Date(document.getElementById('data_nascimento').value);
-            const dataAdmissao = new Date(document.getElementById('data_admissao').value);
+            const dataAdmissao = new Date(document.getElementById('data_entrada').value);
             const idade = dataAdmissao.getFullYear() - dataNascimento.getFullYear();
             document.getElementById('idade').value = idade;
         });
