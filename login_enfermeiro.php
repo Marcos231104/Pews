@@ -29,7 +29,7 @@ $result = $stmt->get_result();
 if ($result->num_rows > 0) {
     // Credentials are correct, login successful
     $_SESSION['coren'] = $coren;
-    echo "<script>alert('Login realizado com sucesso!'); window.location.href='dashboard.php';</script>";
+    echo "<script>alert('Login realizado com sucesso!'); window.location.href='index.html';</script>";
 } else {
     // Credentials are incorrect
     echo "<script>alert('Erro: COREN ou senha incorretos!'); window.location.href='login_medico.html';</script>";
