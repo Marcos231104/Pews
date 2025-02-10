@@ -1,13 +1,10 @@
 <?php
-// Start the session
+// Start a session to manage login state
 session_start();
 
-// Include the database connection
-include 'db.php';
 
-// Check if the connection was successful
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Falha na conexão: " . $conn->connect_error);
 }
 
 // Get input values from form
@@ -17,12 +14,7 @@ $senha = $_POST['senha'];
 // Prepare the SQL query to check credentials
 $sql = "SELECT * FROM enfermeira WHERE coren = ? AND senha = ?";
 $stmt = $conn->prepare($sql);
-
-if ($stmt === false) {
-    die("Error preparing the statement: " . $conn->error);
-}
-
-$stmt->bind_param("ss", $coren, $senha);
+$stmt->bind_param("is", $coren, $senha);
 $stmt->execute();
 $result = $stmt->get_result();
 
@@ -32,7 +24,7 @@ if ($result->num_rows > 0) {
     echo "<script>alert('Login realizado com sucesso!'); window.location.href='index.html';</script>";
 } else {
     // Credentials are incorrect
-    echo "<script>alert('Erro: COREN ou senha incorretos!'); window.location.href='login_medico.html';</script>";
+    echo "<script>alert('Erro: coren ou senha incorretos!'); window.location.href='login_medico.html';</script>";
 }
 
 // Close connections
