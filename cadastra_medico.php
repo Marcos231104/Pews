@@ -21,7 +21,7 @@ if ($stmt->execute()) {
     echo "Error: " . $stmt->error;
 }
 
-// Close the connection
+// Close the connectiona
 $stmt->close();
 $conn->close();
 ?>
