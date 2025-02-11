@@ -128,8 +128,20 @@
         document.getElementById('myForm').addEventListener('submit', function(event) {
             const dataNascimento = new Date(document.getElementById('data_nascimento').value);
             const dataAdmissao = new Date(document.getElementById('data_entrada').value);
-            const idade = dataAdmissao.getFullYear() - dataNascimento.getFullYear();
-            document.getElementById('idade').value = idade;
+
+            let idadeAnos = dataAdmissao.getFullYear() - dataNascimento.getFullYear();
+            let idadeMeses = dataAdmissao.getMonth() - dataNascimento.getMonth();
+
+            if (idadeMeses < 0 || (idadeMeses === 0 && dataAdmissao.getDate() < dataNascimento.getDate())) {
+                idadeAnos--;
+                idadeMeses += 12;
+            }
+
+            if (dataAdmissao.getDate() < dataNascimento.getDate()) {
+                idadeMeses--;
+            }
+
+            document.getElementById('idade').value = `${idadeAnos} anos e ${idadeMeses} meses`;
         });
 
         // Máscara para o telefone
