@@ -106,6 +106,8 @@
             </div>
 
             <input type="hidden" id="idade" name="idade">
+            <input type="hidden" id="anos" name="anos">
+            <input type="hidden" id="meses" name="meses">
 
             <div class="button-group">
                 <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">
@@ -124,7 +126,7 @@
         // Set the current date to the "Data de Admissão" field
         document.getElementById('data_entrada').value = new Date().toISOString().split('T')[0];
     
-        // Calculate age and set it to the hidden idade field before form submission
+        // Calculate age and set it to the hidden idade fields before form submission
         document.getElementById('myForm').addEventListener('submit', function(event) {
             const dataNascimento = new Date(document.getElementById('data_nascimento').value);
             const dataAdmissao = new Date(document.getElementById('data_entrada').value);
@@ -141,7 +143,8 @@
                 idadeMeses--;
             }
 
-            document.getElementById('idade').value = `${idadeAnos} anos e ${idadeMeses} meses`;
+            document.getElementById('anos').value = idadeAnos;
+            document.getElementById('meses').value = idadeMeses;
         });
 
         // Máscara para o telefone
